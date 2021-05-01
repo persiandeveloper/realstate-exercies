@@ -1,0 +1,516 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API",
+    "description": "Description for the API.",
+    "contact": {
+      "name": "Babak",
+      "email": ""
+    },
+    "version": "v1"
+  },
+  "paths": {
+    "/api/v1/Realstate": {
+      "get": {
+        "tags": [
+          "Realstate"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RealStateObject"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RealStateObject"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RealStateObject"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Prijs": {
+        "type": "object",
+        "properties": {
+          "geenExtraKosten": {
+            "type": "boolean"
+          },
+          "huurAbbreviation": {
+            "type": "string",
+            "nullable": true
+          },
+          "huurprijs": {
+            "nullable": true
+          },
+          "huurprijsOpAanvraag": {
+            "type": "string",
+            "nullable": true
+          },
+          "huurprijsTot": {
+            "nullable": true
+          },
+          "koopAbbreviation": {
+            "type": "string",
+            "nullable": true
+          },
+          "koopprijs": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "koopprijsOpAanvraag": {
+            "type": "string",
+            "nullable": true
+          },
+          "koopprijsTot": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "originelePrijs": {
+            "nullable": true
+          },
+          "veilingText": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Project": {
+        "type": "object",
+        "properties": {
+          "aantalKamersTotEnMet": {
+            "nullable": true
+          },
+          "aantalKamersVan": {
+            "nullable": true
+          },
+          "aantalKavels": {
+            "nullable": true
+          },
+          "adres": {
+            "nullable": true
+          },
+          "friendlyUrl": {
+            "nullable": true
+          },
+          "gewijzigdDatum": {
+            "nullable": true
+          },
+          "globalId": {
+            "nullable": true
+          },
+          "hoofdFoto": {
+            "type": "string",
+            "nullable": true
+          },
+          "indIpix": {
+            "type": "boolean"
+          },
+          "indPDF": {
+            "type": "boolean"
+          },
+          "indPlattegrond": {
+            "type": "boolean"
+          },
+          "indTop": {
+            "type": "boolean"
+          },
+          "indVideo": {
+            "type": "boolean"
+          },
+          "internalId": {
+            "type": "string",
+            "nullable": true
+          },
+          "maxWoonoppervlakte": {
+            "nullable": true
+          },
+          "minWoonoppervlakte": {
+            "nullable": true
+          },
+          "naam": {
+            "nullable": true
+          },
+          "omschrijving": {
+            "nullable": true
+          },
+          "openHuizen": {
+            "type": "array",
+            "items": { },
+            "nullable": true
+          },
+          "plaats": {
+            "nullable": true
+          },
+          "prijs": {
+            "nullable": true
+          },
+          "prijsGeformatteerd": {
+            "nullable": true
+          },
+          "publicatieDatum": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "type": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "woningtypen": {
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PromoLabel": {
+        "type": "object",
+        "properties": {
+          "hasPromotionLabel": {
+            "type": "boolean"
+          },
+          "promotionPhotos": {
+            "type": "array",
+            "items": { },
+            "nullable": true
+          },
+          "promotionPhotosSecure": {
+            "nullable": true
+          },
+          "promotionType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ribbonColor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ribbonText": {
+            "nullable": true
+          },
+          "tagline": {
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RealStateObject": {
+        "type": "object",
+        "properties": {
+          "aangebodenSindsTekst": {
+            "type": "string",
+            "nullable": true
+          },
+          "aanmeldDatum": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "aantalBeschikbaar": {
+            "nullable": true
+          },
+          "aantalKamers": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "aantalKavels": {
+            "nullable": true
+          },
+          "aanvaarding": {
+            "type": "string",
+            "nullable": true
+          },
+          "adres": {
+            "type": "string",
+            "nullable": true
+          },
+          "afstand": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bronCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "childrenObjects": {
+            "type": "array",
+            "items": { },
+            "nullable": true
+          },
+          "datumAanvaarding": {
+            "nullable": true
+          },
+          "datumOndertekeningAkte": {
+            "nullable": true
+          },
+          "foto": {
+            "type": "string",
+            "nullable": true
+          },
+          "fotoLarge": {
+            "type": "string",
+            "nullable": true
+          },
+          "fotoLargest": {
+            "type": "string",
+            "nullable": true
+          },
+          "fotoMedium": {
+            "type": "string",
+            "nullable": true
+          },
+          "fotoSecure": {
+            "type": "string",
+            "nullable": true
+          },
+          "gewijzigdDatum": {
+            "nullable": true
+          },
+          "globalId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "groupByObjectType": {
+            "type": "string",
+            "nullable": true
+          },
+          "heeft360GradenFoto": {
+            "type": "boolean"
+          },
+          "heeftBrochure": {
+            "type": "boolean"
+          },
+          "heeftOpenhuizenTopper": {
+            "type": "boolean"
+          },
+          "heeftOverbruggingsgrarantie": {
+            "type": "boolean"
+          },
+          "heeftPlattegrond": {
+            "type": "boolean"
+          },
+          "heeftTophuis": {
+            "type": "boolean"
+          },
+          "heeftVeiling": {
+            "type": "boolean"
+          },
+          "heeftVideo": {
+            "type": "boolean"
+          },
+          "huurPrijsTot": {
+            "nullable": true
+          },
+          "huurprijs": {
+            "nullable": true
+          },
+          "huurprijsFormaat": {
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "inUnitsVanaf": {
+            "nullable": true
+          },
+          "indProjectObjectType": {
+            "type": "boolean"
+          },
+          "indTransactieMakelaarTonen": {
+            "nullable": true
+          },
+          "isSearchable": {
+            "type": "boolean"
+          },
+          "isVerhuurd": {
+            "type": "boolean"
+          },
+          "isVerkocht": {
+            "type": "boolean"
+          },
+          "isVerkochtOfVerhuurd": {
+            "type": "boolean"
+          },
+          "koopprijs": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "koopprijsFormaat": {
+            "type": "string",
+            "nullable": true
+          },
+          "koopprijsTot": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "land": {
+            "type": "string",
+            "nullable": true
+          },
+          "makelaarId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "makelaarNaam": {
+            "type": "string",
+            "nullable": true
+          },
+          "mobileURL": {
+            "type": "string",
+            "nullable": true
+          },
+          "note": {
+            "nullable": true
+          },
+          "openHuis": {
+            "type": "array",
+            "items": { },
+            "nullable": true
+          },
+          "oppervlakte": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "perceeloppervlakte": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "postcode": {
+            "type": "string",
+            "nullable": true
+          },
+          "prijs": {
+            "$ref": "#/components/schemas/Prijs"
+          },
+          "prijsGeformatteerdHtml": {
+            "type": "string",
+            "nullable": true
+          },
+          "prijsGeformatteerdTextHuur": {
+            "type": "string",
+            "nullable": true
+          },
+          "prijsGeformatteerdTextKoop": {
+            "type": "string",
+            "nullable": true
+          },
+          "producten": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "project": {
+            "$ref": "#/components/schemas/Project"
+          },
+          "projectNaam": {
+            "nullable": true
+          },
+          "promoLabel": {
+            "$ref": "#/components/schemas/PromoLabel"
+          },
+          "publicatieDatum": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "publicatieStatus": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "savedDate": {
+            "nullable": true
+          },
+          "Soort-Aanbod": {
+            "type": "string",
+            "nullable": true
+          },
+          "soortAanbod": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "startOplevering": {
+            "nullable": true
+          },
+          "timeAgoText": {
+            "nullable": true
+          },
+          "transactieAfmeldDatum": {
+            "nullable": true
+          },
+          "transactieMakelaarId": {
+            "nullable": true
+          },
+          "transactieMakelaarNaam": {
+            "nullable": true
+          },
+          "typeProject": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
+          },
+          "verkoopStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "wgS84X": {
+            "type": "number",
+            "format": "double"
+          },
+          "wgS84Y": {
+            "type": "number",
+            "format": "double"
+          },
+          "woonOppervlakteTot": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "woonoppervlakte": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "woonplaats": {
+            "type": "string",
+            "nullable": true
+          },
+          "zoekType": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

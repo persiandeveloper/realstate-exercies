@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+
+<div>
+  <div style="width: 50%;">
+    <h2>Here are top 10 agents with most real states: </h2>
+
+    <ul *ngFor="let item of topAgents">
+      <li>{{item.makelaarNaam}}</li>
+    </ul>
+  </div>
+  <div style="width: 50%;">
+    <h2>Here are top 10 deals: </h2>
+
+    <ul *ngFor="let item of topDeals">
+      <li>{{item.aangebodenSindsTekst}}</li>
+      <img src="{{item.foto}}"/>
+    </ul>
+  </div>
+</div>
+
+
+
