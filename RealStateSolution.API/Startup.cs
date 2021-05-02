@@ -49,8 +49,6 @@ namespace RealStateSolution.API
 
             services.Configure<APIConfig>(Configuration.GetSection(config_Key));
 
-            var t = Configuration.GetSection(config_Key);
-
             services.AddHttpClient<IRealStateAPIService, RealStateAPIService>(client =>
             {
                 client.BaseAddress = new Uri(Configuration["PartnerApi:Url"]);

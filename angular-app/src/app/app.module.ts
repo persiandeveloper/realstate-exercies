@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { RealstateService } from 'src/api/generated/controllers/Realstate';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [RealstateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

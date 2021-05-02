@@ -6,7 +6,6 @@ import { RealStateObject } from 'src/api/generated/model';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [RealstateService],
 })
 export class AppComponent {
   title = 'angular-app';
@@ -14,7 +13,6 @@ export class AppComponent {
   topDeals: RealStateObject[];
 
   constructor(private dataService: RealstateService){
-
   }
 
   public ngOnInit() {

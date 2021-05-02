@@ -1,13 +1,38 @@
+import { HttpClientModule } from '@angular/common/http';
 import { TestBed, async } from '@angular/core/testing';
+import { Observable, of } from 'rxjs';
+import { RealstateService } from 'src/api/generated/controllers/Realstate';
+import { RealStateObject } from 'src/api/generated/model';
 import { AppComponent } from './app.component';
+import { TestHelper } from './test.helper';
+
+class StubRealstateService {
+  topAgents(): Observable<RealStateObject[]>{
+    return of(JSON.parse("[]"));
+  };
+  topDeals(): Observable<RealStateObject[]>{
+    return of(JSON.parse("[]"));
+  };
+}
+
+let injectedService : StubRealstateService;
 
 describe('AppComponent', () => {
+  let stubRealstateService = new StubRealstateService();
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
+      imports: [
+        HttpClientModule,
+      ],
+      providers: [{ provide: RealstateService, useValue: stubRealstateService }]
     }).compileComponents();
+    
+    injectedService = TestBed.get(RealstateService);
+
   }));
 
   it('should create the app', () => {
@@ -21,4 +46,14 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('angular-app');
   });
+
+  it(`should call api'`, () => {
+    spyOn(injectedService, 'topAgents').and.returnValue(of());
+
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+
+    expect(injectedService.topAgents).toHaveBeenCalled();
+  });
+
 });
