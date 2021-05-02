@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed, async } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { Observable, of } from 'rxjs';
 import { RealstateService } from 'src/api/generated/controllers/Realstate';
 import { RealStateObject } from 'src/api/generated/model';
@@ -54,6 +55,19 @@ describe('AppComponent', () => {
     fixture.detectChanges();
 
     expect(injectedService.topAgents).toHaveBeenCalled();
+  });
+
+  it(`should render the list'`, () => {
+    let obj = JSON.parse(TestHelper.data);
+    spyOn(injectedService, 'topAgents').and.returnValue(of(obj));
+
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+
+    var liText=fixture.debugElement.query(By.css('#firstList li')).nativeElement.textContent;
+
+    expect(fixture.debugElement.query(By.css('#firstList'))).toBeTruthy();
+    expect(liText).toBe(obj[0].makelaarNaam);
   });
 
 });

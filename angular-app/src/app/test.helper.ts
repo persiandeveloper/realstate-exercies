@@ -45,8 +45,8 @@ export class TestHelper {
         "KoopprijsFormaat": "<[KoopPrijs]> <{kosten koper|kort}>",
         "KoopprijsTot": 500000,
         "Land": "Nederland",
-        "MakelaarId": 24819,
-        "MakelaarNaam": "Fransen & Kroes Makelaars",
+        "makelaarId": 24819,
+        "makelaarNaam": "Fransen & Kroes Makelaars",
         "MobileURL": "http://m.funda.nl/obj.aspx?goi=5945253",
         "Note": null,
         "OpenHuis": [
@@ -68,9 +68,9 @@ export class TestHelper {
           "OriginelePrijs": null,
           "VeilingText": ""
         },
-        "PrijsGeformatteerdHtml": "<span class=\"price-wrapper\"><span class=\"price\">&euro;&nbsp;500.000</span> <abbr class=\"price-ext\">k.k.</abbr></span>",
-        "PrijsGeformatteerdTextHuur": "<span class=\"price-wrapper\"><span class=\"price\">&euro;&nbsp;500.000</span> <abbr class=\"price-ext\">k.k.</abbr></span>",
-        "PrijsGeformatteerdTextKoop": "<span class=\"price-wrapper\"><span class=\"price\">&euro;&nbsp;500.000</span> <abbr class=\"price-ext\">k.k.</abbr></span>",
+        "PrijsGeformatteerdHtml": "<span class='price-wrapper'><span class='price'>&euro;&nbsp;500.000</span> <abbr class='price-ext'>k.k.</abbr></span>",
+        "PrijsGeformatteerdTextHuur": "<span class='price-wrapper'><span class='price'>&euro;&nbsp;500.000</span> <abbr class='price-ext'>k.k.</abbr></span>",
+        "PrijsGeformatteerdTextKoop": "<span class='price-wrapper'><span class='price'>&euro;&nbsp;500.000</span> <abbr class='price-ext'>k.k.</abbr></span>",
         "Producten": [
           "Video",
           "Plattegrond",
